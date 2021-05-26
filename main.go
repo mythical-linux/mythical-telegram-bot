@@ -25,7 +25,7 @@ func main() {
 		if update.Message == nil {
 			continue
 		}
-		if update.Message.IsCommand() {
+		if !update.Message.IsCommand() {
 			continue
 		}
 
