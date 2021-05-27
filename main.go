@@ -36,8 +36,7 @@ func main() {
 		case "about":
 			msg.Text = "Mythical Bot is a Telegram bot designed for the Mythical Linux Telegram room"
 		case "fortune":
-			out := "hello"
-			command.FortuneGet(out)
+			command.FortuneGet()
 		}
 		if _, err := bot.Send(msg); err != nil {
 			log.Panic(err)
