@@ -6,6 +6,7 @@ import (
 	"os"
 
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
+	command "github.com/mythical-linux/mythical-telegram-bot/commands"
 )
 
 func main() {
@@ -34,6 +35,9 @@ func main() {
 		switch update.Message.Command() {
 		case "about":
 			msg.Text = "Mythical Bot is a Telegram bot designed for the Mythical Linux Telegram room"
+		case "fortune":
+			out := "hello"
+			command.FortuneGet(out)
 		}
 		if _, err := bot.Send(msg); err != nil {
 			log.Panic(err)
