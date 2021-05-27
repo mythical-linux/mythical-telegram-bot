@@ -1,16 +1,16 @@
 package command
 
 import (
-	"log"
+	"fmt"
 	"os/exec"
 )
 
 func FortuneGet() string {
-	cmd := exec.Command("fortune", "mythical_linux off/mythical_linux")
-	stout, err := cmd.Output()
+	stdout, err := exec.Command("fortune", "mythical-linux", "off/mythical-linux").Output()
 	if err != nil {
-		log.Panic(err)
+		fmt.Println(err)
 	}
-	out := string(stout)
+	out := string(stdout[:])
+	fmt.Println(out)
 	return out
 }
