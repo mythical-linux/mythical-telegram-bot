@@ -6,7 +6,7 @@ import (
 )
 
 func FortuneGet() string {
-	stdout, err := exec.Command("fortune", "mythical-linux", "off/mythical-linux").Output()
+	stdout, err := exec.Command("fortune", "mythical_linux", "off/mythical_linux").Output()
 	if err != nil {
 		fmt.Println(err)
 	}
